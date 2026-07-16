@@ -1,49 +1,93 @@
-# Event Organizer Database Management System
+# 🎫 Event Organizer Database Management System
 
-Sistem basis data relasional untuk mengelola operasional **Event Organizer**, mulai dari pengelolaan customer, event, sponsor, peserta, tiket, pembayaran, hingga laporan pendapatan dan pengeluaran.
+Perancangan sistem basis data relasional untuk mengelola operasional **Event Organizer**, mulai dari pengelolaan customer, event, sponsor, peserta, tiket, transaksi pembayaran, hingga pencatatan pendapatan dan pengeluaran.
 
-Project ini dibuat sebagai implementasi konsep **Database Management System (DBMS)** menggunakan **PostgreSQL**.
-
----
-
-## 📖 Tentang Project
-
-Mengelola sebuah Event Organizer melibatkan banyak data yang saling berhubungan, seperti data customer, event, sponsor, lokasi, panitia, peserta, transaksi pembayaran, hingga laporan keuangan.
-
-Melalui project ini, seluruh data tersebut dirancang ke dalam sebuah **database relasional** sehingga proses penyimpanan, pengelolaan, pencarian, dan analisis data dapat dilakukan secara lebih terstruktur, efisien, serta mudah dikembangkan.
+Project ini merupakan implementasi konsep **Database Management System (DBMS)** menggunakan **Supabase (PostgreSQL)** sebagai studi kasus pengembangan sistem informasi Event Organizer.
 
 ---
 
-## 📌 Ruang Lingkup Database
+# 🏢 Business Context
+
+Sebuah Event Organizer membutuhkan sistem yang mampu mengelola berbagai aktivitas operasional dalam satu database terintegrasi. Data seperti customer, event, sponsor, lokasi, peserta, panitia, tiket, transaksi pembayaran, hingga laporan keuangan saling berhubungan dan harus dikelola secara konsisten agar proses operasional berjalan lebih efisien.
+
+Melalui project ini, seluruh kebutuhan tersebut dimodelkan ke dalam sebuah **database relasional** sehingga data dapat disimpan, dikelola, dan diakses dengan lebih terstruktur serta mudah dikembangkan.
+
+---
+
+# 🎯 Project Objectives
+
+Project ini bertujuan untuk:
+
+- Merancang struktur database relasional berdasarkan kebutuhan sistem Event Organizer.
+- Mendesain hubungan antar entitas menggunakan Entity Relationship Diagram (ERD).
+- Mengimplementasikan database menggunakan PostgreSQL.
+- Menyiapkan dummy data sebagai simulasi operasional sistem.
+- Mengembangkan script SQL untuk manipulasi data dan contoh query.
+- Mendokumentasikan proses perancangan database dalam bentuk presentasi.
+
+---
+
+# 📌 Database Scope
+
+Database dirancang untuk mendukung berbagai proses bisnis dalam operasional Event Organizer.
 
 | Modul | Deskripsi |
 |--------|-----------|
 | 👥 Customer | Mengelola data customer penyelenggara event. |
 | 🎉 Event | Mengelola informasi event yang diselenggarakan. |
 | 🤝 Sponsor | Mengelola data sponsor beserta kontribusinya. |
-| 📍 Lokasi | Mengelola lokasi pelaksanaan event. |
-| 📅 Jadwal | Mengelola jadwal pelaksanaan setiap event. |
-| 🎟️ Tiket | Mengelola data tiket beserta harga dan jumlah tiket. |
-| 👨‍👩‍👧‍👦 Kelompok Peserta | Mengelola data kelompok peserta yang mengikuti event. |
-| 👨‍💼 Panitia | Mengelola data panitia penyelenggara. |
-| 💳 Pembayaran | Mengelola transaksi pembayaran peserta. |
-| 💰 Pendapatan | Mengelola seluruh pemasukan event. |
-| 💸 Pengeluaran | Mengelola seluruh biaya operasional event. |
-| 📊 Pelaksanaan | Menghubungkan seluruh data operasional event menjadi satu kesatuan. |
+| 📍 Venue | Mengelola lokasi pelaksanaan event. |
+| 📅 Schedule | Mengelola jadwal setiap event. |
+| 🎟 Ticket | Mengelola data tiket beserta harga dan kuota. |
+| 👨‍👩‍👧‍👦 Participant Group | Mengelola kelompok peserta yang mengikuti event. |
+| 👨‍💼 Committee | Mengelola data panitia penyelenggara. |
+| 💳 Payment | Mengelola transaksi pembayaran peserta. |
+| 💰 Revenue | Mencatat seluruh pemasukan event. |
+| 💸 Expense | Mencatat seluruh biaya operasional event. |
+| 📊 Event Implementation | Menghubungkan seluruh aktivitas operasional menjadi satu kesatuan. |
 
 ---
 
-## 🗺️ Entity Relationship Diagram (ERD)
+# 🗺️ Entity Relationship Diagram (ERD)
 
-Diagram berikut menunjukkan hubungan antar tabel yang digunakan pada database.
+Database diimplementasikan menggunakan **Supabase (PostgreSQL)**. Setelah seluruh tabel dan relasi selesai dibuat, struktur database divisualisasikan menggunakan fitur **Schema Visualizer** sehingga hubungan antar entitas dapat terlihat dengan lebih jelas.
 
 <p align="center">
-  <img src="assets/erd.png" alt="Entity Relationship Diagram" width="100%">
+  <img src="assets/erd.png" width="100%">
 </p>
 
 ---
 
-## 📁 Struktur Repository
+# 🧪 Dummy Data
+
+Repository ini juga menyediakan **dummy data** sebagai simulasi data operasional Event Organizer.
+
+Dummy data disusun menggunakan **Google Sheets**, kemudian digunakan sebagai referensi dalam proses pengisian database sehingga struktur yang dirancang dapat diuji menggunakan data yang menyerupai kondisi nyata.
+
+---
+
+# 💻 Database Scripts
+
+Seluruh implementasi database disusun secara bertahap sehingga setiap proses dapat dipelajari dengan mudah.
+
+| File | Deskripsi |
+|------|-----------|
+| **01_schema.sql** | Membuat seluruh tabel beserta Primary Key, Foreign Key, dan relasi antar tabel. |
+| **02_seed_data.sql** | Mengisi database menggunakan dummy data. |
+| **03_data_manipulation.sql** | Berisi contoh operasi INSERT, UPDATE, DELETE, ALTER TABLE, dan TRUNCATE. |
+| **04_query_examples.sql** | Berisi berbagai contoh query SQL seperti SELECT, JOIN, filtering, agregasi, dan analisis sederhana. |
+
+---
+
+# 📑 Presentation
+
+Seluruh proses perancangan database mulai dari analisis kebutuhan, desain database, implementasi SQL, hingga hasil akhir project didokumentasikan dalam file presentasi berikut.
+
+📄 **presentation/sistem-basis-data-manajemen-event.pdf**
+
+---
+
+# 📂 Project Structure
 
 ```text
 .
@@ -67,53 +111,51 @@ Diagram berikut menunjukkan hubungan antar tabel yang digunakan pada database.
 
 ---
 
-## 📂 Penjelasan Repository
+# 🛠 Tools
 
-| Folder / File | Deskripsi |
-|----------------|-----------|
-| **assets** | Berisi aset pendukung project berupa **Entity Relationship Diagram (ERD)**. |
-| **data** | Berisi file **dummy_data.xlsx** yang digunakan sebagai referensi data awal sebelum diimplementasikan ke database. |
-| **database** | Berisi seluruh script SQL mulai dari pembuatan struktur database, pengisian dummy data, manipulasi data, hingga contoh query SQL. |
-| **presentation** | Berisi file **sistem-basis-data-manajemen-event.pdf** yang digunakan sebagai media presentasi project. |
-
----
-
-## 🗃️ Database Scripts
-
-| File | Deskripsi |
-|------|-----------|
-| **01_schema.sql** | Script pembuatan seluruh tabel, relasi, Primary Key, dan Foreign Key. |
-| **02_seed_data.sql** | Script pengisian **dummy data** ke seluruh tabel database. |
-| **03_data_manipulation.sql** | Berisi operasi manipulasi data seperti **INSERT**, **UPDATE**, **DELETE**, **ALTER TABLE**, dan **TRUNCATE**. |
-| **04_query_examples.sql** | Berisi berbagai contoh query SQL untuk pencarian, filtering, JOIN, agregasi, dan analisis data. |
+| Category | Tools |
+| --- | --- |
+| Database | Supabase (PostgreSQL) |
+| Database Modeling | Supabase Schema Visualizer |
+| Spreadsheet | Google Sheets |
+| Documentation & Presentation | Canva |
+| Version Control | Git & GitHub |
 
 ---
 
-## 🛠️ Teknologi yang Digunakan
+# 💼 Skills Demonstrated
 
-| Teknologi | Kegunaan |
-|------------|----------|
-| PostgreSQL | Database Management System (DBMS) |
-| SQL | Bahasa untuk mengelola dan memanipulasi database |
-| Draw.io | Perancangan Entity Relationship Diagram (ERD) |
-| Microsoft Excel | Penyusunan dummy data |
-| Microsoft PowerPoint | Pembuatan slide presentasi |
+### 🗄 Database Design
+
+- Relational Database Design
+- Entity Relationship Modeling (ERM)
+- Relationship Management
+- Database Schema Design
+
+### 💻 SQL
+
+- Data Definition Language (DDL)
+- Data Manipulation Language (DML)
+- SELECT Query
+- JOIN
+- Aggregate Functions
+- Filtering & Sorting
+
+### 📊 Data Management
+
+- Dummy Data Preparation
+- Database Seeding
+- Data Integrity
+
+### 📑 Documentation
+
+- Technical Documentation
+- Database Presentation
 
 ---
 
-## 🎯 Tujuan Project
+# 🚀 Conclusion
 
-Project ini bertujuan untuk mengimplementasikan konsep dasar **Database Management System (DBMS)** melalui studi kasus sistem manajemen Event Organizer, meliputi:
+Project ini menunjukkan proses perancangan sebuah **database relasional** untuk sistem Event Organizer, mulai dari analisis kebutuhan, pemodelan database, implementasi menggunakan **Supabase (PostgreSQL)**, penyusunan dummy data, hingga dokumentasi dalam bentuk presentasi.
 
-- Merancang struktur database relasional.
-- Membuat Entity Relationship Diagram (ERD).
-- Membangun tabel beserta relasi antar entitas.
-- Mengisi database menggunakan dummy data.
-- Melakukan manipulasi data menggunakan SQL.
-- Menyusun berbagai query SQL untuk kebutuhan pencarian dan analisis data.
-
----
-
-## 📝 Catatan
-
-Project ini merupakan implementasi akademik pada mata kuliah **Sistem Basis Data** dengan studi kasus **Manajemen Event Organizer**. Fokus utama project adalah perancangan database relasional, implementasi SQL, serta pengelolaan data menggunakan PostgreSQL.
+Melalui project ini, konsep-konsep utama **Database Management System (DBMS)** seperti perancangan relasi antar entitas, implementasi SQL, serta pengelolaan data diterapkan secara menyeluruh sehingga menghasilkan database yang terstruktur, konsisten, dan siap dikembangkan untuk kebutuhan sistem yang lebih kompleks.
