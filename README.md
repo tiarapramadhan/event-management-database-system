@@ -1,22 +1,47 @@
-# 📊 Sistem Basis Data Manajemen Event
+# Event Organizer Database Management System
 
-Repository ini merupakan dokumentasi proyek perancangan dan implementasi **Sistem Basis Data Manajemen Event** menggunakan PostgreSQL.
+Sistem basis data untuk mengelola operasional **Event Organizer**, mulai dari data customer, event, peserta, sponsor, tiket, pembayaran, hingga laporan pendapatan dan pengeluaran.
 
-Proyek ini dibuat untuk mendukung proses pengelolaan data pada sebuah Event Organizer (EO), mulai dari data customer, event, peserta, sponsor, jadwal, transaksi pembayaran, pendapatan, pengeluaran, hingga pelaksanaan event.
-
-Seluruh database dirancang menggunakan konsep **Relational Database Management System (RDBMS)** sehingga setiap data saling terhubung melalui relasi (Primary Key dan Foreign Key) untuk menjaga konsistensi dan integritas data.
+Project ini dibuat sebagai implementasi konsep **Database Management System (DBMS)** menggunakan PostgreSQL.
 
 ---
 
-# 🎯 Tujuan Proyek
+## 📖 Tentang Project
 
-Project ini bertujuan untuk:
+Dalam sebuah Event Organizer, banyak data yang saling terhubung, seperti:
 
-- Merancang struktur database yang terorganisir dan terintegrasi.
-- Mengimplementasikan relasi antar tabel menggunakan Primary Key dan Foreign Key.
-- Melakukan operasi pengelolaan data (Create, Read, Update, Delete).
-- Menyediakan contoh query SQL sebagai implementasi pengolahan data.
-- Mendokumentasikan proses perancangan database secara lengkap.
+- Customer
+- Event
+- Sponsor
+- Lokasi
+- Kelompok Peserta
+- Tiket
+- Pembayaran
+- Pendapatan
+- Pengeluaran
+- Panitia
+- Jadwal
+
+Seluruh data tersebut dirancang ke dalam sebuah database relasional agar proses penyimpanan, pengelolaan, dan pencarian data menjadi lebih mudah, cepat, serta terstruktur.
+
+---
+
+## ✨ Fitur Database
+
+Database ini mendukung berbagai proses operasional, seperti:
+
+- Mengelola data customer
+- Mengelola data event
+- Mengelola data sponsor
+- Mengelola lokasi event
+- Mengelola kelompok peserta
+- Mengelola jadwal event
+- Mengelola tiket
+- Mengelola pembayaran
+- Mengelola pendapatan
+- Mengelola pengeluaran
+- Mengelola panitia
+- Menampilkan laporan menggunakan SQL Query
 
 ---
 
@@ -25,8 +50,6 @@ Project ini bertujuan untuk:
 ```
 .
 ├── assets/
-│   ├── database-preview.png
-│   ├── database-schema.png
 │   └── erd.png
 │
 ├── database/
@@ -36,145 +59,90 @@ Project ini bertujuan untuk:
 │   └── 04_query_examples.sql
 │
 ├── docs/
-│   └── database-design.pdf
+│   └── database_design.pdf
 │
-├── presentation/
-│   └── sistem-basis-data-manajemen-event.pdf
-│
-└── README.md
+└── presentation/
+    └── presentasi.pdf
 ```
 
 ---
 
-# 📁 Penjelasan Folder
+# 🧩 Entity Relationship Diagram (ERD)
 
-## assets/
+ERD berikut menunjukkan hubungan antar tabel pada database.
 
-Berisi aset visual yang digunakan untuk memperjelas struktur database.
-
-### ERD (Entity Relationship Diagram)
-
-Menampilkan hubungan antar entitas beserta relasi Primary Key dan Foreign Key.
-
-### Database Schema
-
-Menampilkan struktur tabel beserta atribut yang dimiliki setiap tabel.
-
-### Database Preview
-
-Menampilkan tampilan data hasil implementasi database.
+<p align="center">
+  <img src="assets/erd.png" width="100%">
+</p>
 
 ---
 
-## database/
+# 📂 Penjelasan Folder
 
-Berisi seluruh script SQL yang digunakan selama pengembangan database.
-
-### 01_schema.sql
-
-Script pembuatan seluruh tabel database beserta relasi antar tabel menggunakan Primary Key dan Foreign Key.
-
-### 02_seed_data.sql
-
-Script pengisian data awal (dummy data) ke setiap tabel sehingga database dapat langsung digunakan untuk pengujian.
-
-### 03_data_manipulation.sql
-
-Berisi contoh operasi manipulasi data seperti:
-
-- INSERT
-- UPDATE
-- DELETE
-- ALTER TABLE
-- TRUNCATE
-
-### 04_query_examples.sql
-
-Berisi kumpulan contoh query SQL untuk mengambil informasi dari database, seperti:
-
-- JOIN
-- GROUP BY
-- ORDER BY
-- COUNT
-- LIMIT
-- Filtering Data
+| Folder | Deskripsi |
+|---------|-----------|
+| **assets** | Berisi aset pendukung project, termasuk Entity Relationship Diagram (ERD). |
+| **database** | Berisi seluruh script SQL mulai dari pembuatan database, data awal, manipulasi data, hingga contoh query. |
+| **docs** | Berisi dokumentasi perancangan database dalam bentuk PDF. |
+| **presentation** | Berisi slide presentasi project yang digunakan saat pemaparan. |
 
 ---
 
-## docs/
+# 🗃️ Isi Folder Database
 
-Berisi dokumen perancangan database yang menjelaskan proses desain database secara lebih rinci.
+| File | Deskripsi |
+|------|-----------|
+| **01_schema.sql** | Script pembuatan seluruh tabel beserta relasi (Primary Key & Foreign Key). |
+| **02_seed_data.sql** | Script untuk mengisi data awal (dummy data) ke seluruh tabel. |
+| **03_data_manipulation.sql** | Berisi operasi INSERT, UPDATE, DELETE, ALTER, dan TRUNCATE yang digunakan selama pengembangan database. |
+| **04_query_examples.sql** | Berisi contoh query SQL untuk analisis dan pengambilan informasi dari database. |
 
 ---
 
-## presentation/
+# 🛠️ Teknologi
 
-Berisi file presentasi yang digunakan untuk menjelaskan keseluruhan proyek Sistem Basis Data Manajemen Event.
+| Teknologi | Keterangan |
+|-----------|------------|
+| PostgreSQL | Database Management System |
+| SQL | Query Language |
+| Draw.io | Pembuatan ERD |
+| Microsoft PowerPoint | Presentasi Project |
 
 ---
 
-# 🗃️ Struktur Database
+# 📊 Cakupan Database
 
-Database ini terdiri dari beberapa entitas utama, di antaranya:
+Database ini terdiri dari beberapa tabel utama yang saling terhubung, antara lain:
 
 - Customer
 - Event
 - Sponsor
 - Lokasi
-- Kategori Event
-- Panitia
-- Kelompok Peserta
 - Jadwal
 - Tiket
+- Kelompok Peserta
+- Panitia
 - Pembayaran
 - Pendapatan
 - Pengeluaran
 - Pelaksanaan Event
-
-Seluruh tabel saling terhubung menggunakan relasi untuk menjaga integritas data dan meminimalkan redundansi.
-
----
-
-# ✨ Fitur Database
-
-Database mendukung berbagai proses pengelolaan data, seperti:
-
-- Manajemen data event
-- Manajemen customer
-- Manajemen sponsor
-- Manajemen peserta
-- Manajemen jadwal
-- Manajemen tiket
-- Manajemen pembayaran
-- Manajemen pendapatan
-- Manajemen pengeluaran
-- Monitoring status pelaksanaan event
-- Analisis data menggunakan query SQL
+- Kategori Event
 
 ---
 
-# 📄 Dokumentasi
+# 🎯 Tujuan Project
 
-Repository ini juga dilengkapi dengan dokumentasi berupa:
+Project ini dibuat untuk menerapkan konsep Database Management System (DBMS), meliputi:
 
-- Entity Relationship Diagram (ERD)
-- Database Schema
-- Database Preview
-- Database Design
-- Presentasi Proyek
-
-Dokumentasi tersebut membantu memahami proses perancangan hingga implementasi database secara menyeluruh.
-
----
-
-# 💻 Teknologi yang Digunakan
-
-- PostgreSQL
-- SQL
-- Relational Database Management System (RDBMS)
+- Perancangan Entity Relationship Diagram (ERD)
+- Implementasi relasi antar tabel
+- Pembuatan schema database
+- Pengisian data awal (seed data)
+- Manipulasi data menggunakan SQL
+- Pembuatan query untuk kebutuhan analisis data
 
 ---
 
-# 📌 Catatan
+## 📌 Catatan
 
-Repository ini dibuat sebagai dokumentasi implementasi Sistem Basis Data Manajemen Event dan bertujuan untuk menunjukkan proses perancangan database mulai dari desain, implementasi, manipulasi data, hingga contoh penggunaan query SQL.
+Project ini merupakan project akademik yang berfokus pada perancangan dan implementasi database menggunakan PostgreSQL sebagai studi kasus sistem manajemen Event Organizer.
